@@ -1,4 +1,4 @@
-package org.example;
+package org.example.B2_NgonNgu;
 
 import java.util.Arrays;
 import java.util.Scanner;

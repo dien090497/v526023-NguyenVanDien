@@ -1,7 +1,9 @@
 package org.example;
 
+import org.example.B3_OOP.BaiTapOOP;
+
 public class Main {
     public static void main(String[] args) {
-        BaiTap1.mainBaiTap1();
+        BaiTapOOP.mainBaiTapOOP();
     }
 }
