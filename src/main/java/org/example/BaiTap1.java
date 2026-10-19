@@ -8,7 +8,48 @@ public class BaiTap1 {
 
 
     static void mainBaiTap1() {
-        Bai3();
+        while (true) {
+            System.out.println("\n========== MENU BÀI TẬP ==========");
+            System.out.println("1. Bài 1: In mảng và tổng các phần tử");
+            System.out.println("2. Bài 2: Tìm chỉ số của 1 số trong mảng");
+            System.out.println("3. Bài 3: Tìm phần tử lớn nhất trong mảng");
+            System.out.println("4. Bài 4: Cộng số nguyên, dừng khi tổng > 50");
+            System.out.println("0. Thoát");
+            System.out.println("==================================");
+
+            int choice = -1;
+            while (true) {
+                System.out.print("Chọn bài (0-4): ");
+                if (scanner.hasNextInt()) {
+                    choice = scanner.nextInt();
+                    break;
+                } else {
+                    System.out.println("Lỗi: Vui lòng nhập một số nguyên hợp lệ!");
+                    scanner.next();
+                }
+            }
+
+            switch (choice) {
+                case 1:
+                    Bai1();
+                    break;
+                case 2:
+                    Bai2();
+                    break;
+                case 3:
+                    Bai3();
+                    break;
+                case 4:
+                    Bai4();
+                    break;
+                case 0:
+                    System.out.println("Cảm ơn đã sử dụng chương trình. Tạm biệt!");
+                    scanner.close();
+                    return;
+                default:
+                    System.out.println("Lựa chọn không hợp lệ! Vui lòng chọn lại.");
+            }
+        }
     }
 
     static void Bai4() {
@@ -40,8 +81,6 @@ public class BaiTap1 {
         }
 
         System.out.println("Tổng các số đã nhập là: " + sum);
-
-        scanner.close();
     }
 
     static void Bai3() {
@@ -84,11 +123,8 @@ public class BaiTap1 {
             max = Math.max(max, arr[i]);
         }
 
-        System.out.print("\nMảng bạn vừa nhập là: " + Arrays.toString(arr));
-
+        System.out.println("\nMảng bạn vừa nhập là: " + Arrays.toString(arr));
         System.out.println("Phần tử lớn nhất trong mảng là: " + max);
-
-        scanner.close();
     }
 
 
@@ -151,11 +187,9 @@ public class BaiTap1 {
             System.out.print("Không tìm thấy số này trong mảng.");
         }
         System.out.println();
-
-        scanner.close();
     }
-    void Bai1() {
 
+    static void Bai1() {
         int n = 0;
 
         while (true) {
@@ -189,8 +223,12 @@ public class BaiTap1 {
             }
         }
 
-        System.out.print("\nMảng bạn vừa nhập là: " + Arrays.toString(arr));
+        int sum = 0;
+        for (int i = 0; i < n; i++) {
+            sum += arr[i];
+        }
 
-        scanner.close();
+        System.out.println("\nMảng bạn vừa nhập là: " + Arrays.toString(arr));
+        System.out.println("Tổng các phần tử trong mảng là: " + sum);
     }
 }
